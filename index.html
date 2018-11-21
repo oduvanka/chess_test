@@ -1,0 +1,135 @@
+﻿<!DOCTYPE HTML>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Шахматы</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/script.js"></script>
+  </head>
+  <body>
+	<div class="container">
+		<div class="board">
+			<!--Верхняя граница-->
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			
+			<!--Ряд 8-->
+			<div class="cage border-left"><div class="cageContent contentNumber">8</div></div>
+			<div class="cage whiteCage" id="cage-A8"><div class="cageContent contentFigure figureRook1Black" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-B8"><div class="cageContent contentFigure figureKnight1Black" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-C8"><div class="cageContent contentFigure figureBishop1Black" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-D8"><div class="cageContent contentFigure figureQueenBlack" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-E8"><div class="cageContent contentFigure figureKingBlack" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-F8"><div class="cageContent contentFigure figureBishop2Black" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-G8"><div class="cageContent contentFigure figureKnight2Black" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-H8"><div class="cageContent contentFigure figureRook2Black" draggable="true"></div></div>
+			<div></div>
+			
+			<!--Ряд 7-->
+			<div class="cage border-left"><div class="cageContent contentNumber">7</div></div>
+			<div class="cage blackCage" id="cage-A7"><div class="cageContent contentFigure figurePawn1Black" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-B7"><div class="cageContent contentFigure figurePawn2Black" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-C7"><div class="cageContent contentFigure figurePawn3Black" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-D7"><div class="cageContent contentFigure figurePawn4Black" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-E7"><div class="cageContent contentFigure figurePawn5Black" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-F7"><div class="cageContent contentFigure figurePawn6Black" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-G7"><div class="cageContent contentFigure figurePawn7Black" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-H7"><div class="cageContent contentFigure figurePawn8Black" draggable="true"></div></div>
+			<div></div>
+			
+			<!--Ряд 6-->
+			<div class="cage border-left"><div class="cageContent contentNumber">6</div></div>
+			<div class="cage whiteCage" id="cage-A6"></div>
+			<div class="cage blackCage" id="cage-B6"></div>
+			<div class="cage whiteCage" id="cage-C6"></div>
+			<div class="cage blackCage" id="cage-D6"></div>
+			<div class="cage whiteCage" id="cage-E6"></div>
+			<div class="cage blackCage" id="cage-F6"></div>
+			<div class="cage whiteCage" id="cage-G6"></div>
+			<div class="cage blackCage" id="cage-H6"></div>
+			<div></div>
+			
+			<!--Ряд 5-->
+			<div class="cage border-left"><div class="cageContent contentNumber">5</div></div>
+			<div class="cage blackCage" id="cage-A5"></div>
+			<div class="cage whiteCage" id="cage-B5"></div>
+			<div class="cage blackCage" id="cage-C5"></div>
+			<div class="cage whiteCage" id="cage-D5"></div>
+			<div class="cage blackCage" id="cage-E5"></div>
+			<div class="cage whiteCage" id="cage-F5"></div>
+			<div class="cage blackCage" id="cage-G5"></div>
+			<div class="cage whiteCage" id="cage-H5"></div>
+			<div></div>
+			
+			<!--Ряд 4-->
+			<div class="cage border-left"><div class="cageContent contentNumber">4</div></div>
+			<div class="cage whiteCage" id="cage-A4"></div>
+			<div class="cage blackCage" id="cage-B4"></div>
+			<div class="cage whiteCage" id="cage-C4"></div>
+			<div class="cage blackCage" id="cage-D4"></div>
+			<div class="cage whiteCage" id="cage-E4"></div>
+			<div class="cage blackCage" id="cage-F4"></div>
+			<div class="cage whiteCage" id="cage-G4"></div>
+			<div class="cage blackCage" id="cage-H4"></div>
+			<div></div>
+			
+			<!--Ряд 3-->
+			<div class="cage border-left"><div class="cageContent contentNumber">3</div></div>
+			<div class="cage blackCage" id="cage-A3"></div>
+			<div class="cage whiteCage" id="cage-B3"></div>
+			<div class="cage blackCage" id="cage-C3"></div>
+			<div class="cage whiteCage" id="cage-D3"></div>
+			<div class="cage blackCage" id="cage-E3"></div>
+			<div class="cage whiteCage" id="cage-F3"></div>
+			<div class="cage blackCage" id="cage-G3"></div>
+			<div class="cage whiteCage" id="cage-H3"></div>
+			<div></div>
+			
+			<!--Ряд 2-->
+			<div class="cage border-left"><div class="cageContent contentNumber">2</div></div>
+			<div class="cage whiteCage" id="cage-A2"><div class="cageContent contentFigure figurePawn1White" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"></div></div>
+			<div class="cage blackCage" id="cage-B2"><div class="cageContent contentFigure figurePawn2White" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-C2"><div class="cageContent contentFigure figurePawn3White" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-D2"><div class="cageContent contentFigure figurePawn4White" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-E2"><div class="cageContent contentFigure figurePawn5White" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-F2"><div class="cageContent contentFigure figurePawn6White" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-G2"><div class="cageContent contentFigure figurePawn7White" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-H2"><div class="cageContent contentFigure figurePawn8White" draggable="true"></div></div>
+			<div></div>
+			
+			<!--Ряд 1-->
+			<div class="cage border-left"><div class="cageContent contentNumber">1</div></div>
+			<div class="cage blackCage" id="cage-A1"><div class="cageContent contentFigure figureRook1White" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-B1"><div class="cageContent contentFigure figureKnight1White" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-C1"><div class="cageContent contentFigure figureBishop1White" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-D1"><div class="cageContent contentFigure figureQueenWhite" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-E1"><div class="cageContent contentFigure figureKingWhite" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-F1"><div class="cageContent contentFigure figureBishop2White" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-G1"><div class="cageContent contentFigure figureKnight2White" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-H1"><div class="cageContent contentFigure figureRook2White" draggable="true"></div></div>
+			<div></div>
+			
+			<!--Нижняя граница-->
+			<div></div>
+			<div class="cage"><div class="cageContent contentLetter">A</div></div>
+			<div class="cage"><div class="cageContent contentLetter">B</div></div>
+			<div class="cage"><div class="cageContent contentLetter">C</div></div>
+			<div class="cage"><div class="cageContent contentLetter">D</div></div>
+			<div class="cage"><div class="cageContent contentLetter">E</div></div>
+			<div class="cage"><div class="cageContent contentLetter">F</div></div>
+			<div class="cage"><div class="cageContent contentLetter">G</div></div>
+			<div class="cage"><div class="cageContent contentLetter">H</div></div>
+			<div></div>
+		</div>
+		<div id="FEN" style="display:none">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1</div>
+	</div>
+  </body>
+</html>
