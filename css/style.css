@@ -45,6 +45,10 @@ body {
 	background-color: #7d8fbd;
 }
 
+.cageLegal {
+	background-color="purple";
+}
+
 /*Фигуры*/
 
 .contentFigure {
@@ -66,72 +70,72 @@ body {
 
 /*Белые*/
 /*Король*/
-.figureKingWhite {
+#figureKingWhite {
 	background-position: -3px -3px;
 }
 /*Ферзь*/
-.figureQueenWhite {
+#figureQueenWhite {
 	background-position: -63px -3px;
 }
 /*Слон*/
-.figureBishop1White,
-.figureBishop2White {
+#figureBishop1White,
+#figureBishop2White {
 	background-position: -122px -3px;
 }
 /*Конь*/
-.figureKnight1White,
-.figureKnight2White {
+#figureKnight1White,
+#figureKnight2White {
 	background-position: -181px -3px;
 }
 /*Ладья*/
-.figureRook1White,
-.figureRook2White {
+#figureRook1White,
+#figureRook2White {
 	background-position: -240px -3px;
 }
 /*Пешка*/
-.figurePawn1White,
-.figurePawn2White,
-.figurePawn3White,
-.figurePawn4White,
-.figurePawn5White,
-.figurePawn6White,
-.figurePawn7White,
-.figurePawn8White {
+#figurePawn1White,
+#figurePawn2White,
+#figurePawn3White,
+#figurePawn4White,
+#figurePawn5White,
+#figurePawn6White,
+#figurePawn7White,
+#figurePawn8White {
 	background-position: -300px -3px;
 }
 
 /*Чёрные*/
 /*Король*/
-.figureKingBlack {
+#figureKingBlack {
 	background-position: -3px -65px;
 }
 /*Ферзь*/
-.figureQueenBlack {
+#figureQueenBlack {
 	background-position: -63px -65px;
 }
 /*Слон*/
-.figureBishop1Black,
-.figureBishop2Black {
+#figureBishop1Black,
+#figureBishop2Black {
 	background-position: -122px -65px;
 }
 /*Конь*/
-.figureKnight1Black,
-.figureKnight2Black {
+#figureKnight1Black,
+#figureKnight2Black {
 	background-position: -181px -65px;
 }
 /*Ладья*/
-.figureRook1Black,
-.figureRook2Black {
+#figureRook1Black,
+#figureRook2Black {
 	background-position: -240px -65px;
 }
 /*Пешка*/
-.figurePawn1Black,
-.figurePawn2Black,
-.figurePawn3Black,
-.figurePawn4Black,
-.figurePawn5Black,
-.figurePawn6Black,
-.figurePawn7Black,
-.figurePawn8Black {
+#figurePawn1Black,
+#figurePawn2Black,
+#figurePawn3Black,
+#figurePawn4Black,
+#figurePawn5Black,
+#figurePawn6Black,
+#figurePawn7Black,
+#figurePawn8Black {
 	background-position: -300px -65px;
 }

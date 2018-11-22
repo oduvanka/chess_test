@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title>Шахматы</title>
 	<link rel="stylesheet" href="css/style.css">
-	<script src="js/script.js"></script>
   </head>
   <body>
 	<div class="container">
@@ -23,98 +22,98 @@
 			
 			<!--Ряд 8-->
 			<div class="cage border-left"><div class="cageContent contentNumber">8</div></div>
-			<div class="cage whiteCage" id="cage-A8"><div class="cageContent contentFigure figureRook1Black" draggable="true"></div></div>
-			<div class="cage blackCage" id="cage-B8"><div class="cageContent contentFigure figureKnight1Black" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-C8"><div class="cageContent contentFigure figureBishop1Black" draggable="true"></div></div>
-			<div class="cage blackCage" id="cage-D8"><div class="cageContent contentFigure figureQueenBlack" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-E8"><div class="cageContent contentFigure figureKingBlack" draggable="true"></div></div>
-			<div class="cage blackCage" id="cage-F8"><div class="cageContent contentFigure figureBishop2Black" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-G8"><div class="cageContent contentFigure figureKnight2Black" draggable="true"></div></div>
-			<div class="cage blackCage" id="cage-H8"><div class="cageContent contentFigure figureRook2Black" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-a8" data-square="a8"><div class="cageContent contentFigure" data-piece="bR" draggable="true" id="figureRook1Black"></div></div>
+			<div class="cage blackCage" id="cage-b8" data-square="b8"><div class="cageContent contentFigure" data-piece="bN" draggable="true" id="figureKnight1Black"></div></div>
+			<div class="cage whiteCage" id="cage-c8" data-square="c8"><div class="cageContent contentFigure" data-piece="bB" draggable="true" id="figureBishop1Black"></div></div>
+			<div class="cage blackCage" id="cage-d8" data-square="d8"><div class="cageContent contentFigure" data-piece="bQ" draggable="true" id="figureQueenBlack"></div></div>
+			<div class="cage whiteCage" id="cage-e8" data-square="e8"><div class="cageContent contentFigure" data-piece="bK" draggable="true" id="figureKingBlack"></div></div>
+			<div class="cage blackCage" id="cage-f8" data-square="f8"><div class="cageContent contentFigure" data-piece="bB" draggable="true" id="figureBishop2Black"></div></div>
+			<div class="cage whiteCage" id="cage-g8" data-square="g8"><div class="cageContent contentFigure" data-piece="bN" draggable="true" id="figureKnight2Black"></div></div>
+			<div class="cage blackCage" id="cage-h8" data-square="h8"><div class="cageContent contentFigure" data-piece="bR" draggable="true" id="figureRook2Black"></div></div>
 			<div></div>
 			
 			<!--Ряд 7-->
 			<div class="cage border-left"><div class="cageContent contentNumber">7</div></div>
-			<div class="cage blackCage" id="cage-A7"><div class="cageContent contentFigure figurePawn1Black" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-B7"><div class="cageContent contentFigure figurePawn2Black" draggable="true"></div></div>
-			<div class="cage blackCage" id="cage-C7"><div class="cageContent contentFigure figurePawn3Black" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-D7"><div class="cageContent contentFigure figurePawn4Black" draggable="true"></div></div>
-			<div class="cage blackCage" id="cage-E7"><div class="cageContent contentFigure figurePawn5Black" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-F7"><div class="cageContent contentFigure figurePawn6Black" draggable="true"></div></div>
-			<div class="cage blackCage" id="cage-G7"><div class="cageContent contentFigure figurePawn7Black" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-H7"><div class="cageContent contentFigure figurePawn8Black" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-a7" data-square="a7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn1Black"></div></div>
+			<div class="cage whiteCage" id="cage-b7" data-square="b7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn2Black"></div></div>
+			<div class="cage blackCage" id="cage-c7" data-square="c7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn3Black"></div></div>
+			<div class="cage whiteCage" id="cage-d7" data-square="d7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn4Black"></div></div>
+			<div class="cage blackCage" id="cage-e7" data-square="e7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn5Black"></div></div>
+			<div class="cage whiteCage" id="cage-f7" data-square="f7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn6Black"></div></div>
+			<div class="cage blackCage" id="cage-g7" data-square="h7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn7Black"></div></div>
+			<div class="cage whiteCage" id="cage-h7" data-square="h7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn8Black"></div></div>
 			<div></div>
 			
 			<!--Ряд 6-->
 			<div class="cage border-left"><div class="cageContent contentNumber">6</div></div>
-			<div class="cage whiteCage" id="cage-A6"></div>
-			<div class="cage blackCage" id="cage-B6"></div>
-			<div class="cage whiteCage" id="cage-C6"></div>
-			<div class="cage blackCage" id="cage-D6"></div>
-			<div class="cage whiteCage" id="cage-E6"></div>
-			<div class="cage blackCage" id="cage-F6"></div>
-			<div class="cage whiteCage" id="cage-G6"></div>
-			<div class="cage blackCage" id="cage-H6"></div>
+			<div class="cage whiteCage" id="cage-a6" data-square="a6"></div>
+			<div class="cage blackCage" id="cage-b6" data-square="b6"></div>
+			<div class="cage whiteCage" id="cage-c6" data-square="c6"></div>
+			<div class="cage blackCage" id="cage-d6" data-square="d6"></div>
+			<div class="cage whiteCage" id="cage-e6" data-square="e6"></div>
+			<div class="cage blackCage" id="cage-f6" data-square="f6"></div>
+			<div class="cage whiteCage" id="cage-g6" data-square="g6"></div>
+			<div class="cage blackCage" id="cage-h6" data-square="h6"></div>
 			<div></div>
 			
 			<!--Ряд 5-->
 			<div class="cage border-left"><div class="cageContent contentNumber">5</div></div>
-			<div class="cage blackCage" id="cage-A5"></div>
-			<div class="cage whiteCage" id="cage-B5"></div>
-			<div class="cage blackCage" id="cage-C5"></div>
-			<div class="cage whiteCage" id="cage-D5"></div>
-			<div class="cage blackCage" id="cage-E5"></div>
-			<div class="cage whiteCage" id="cage-F5"></div>
-			<div class="cage blackCage" id="cage-G5"></div>
-			<div class="cage whiteCage" id="cage-H5"></div>
+			<div class="cage blackCage" id="cage-a5" data-square="a5"></div>
+			<div class="cage whiteCage" id="cage-b5" data-square="b5"></div>
+			<div class="cage blackCage" id="cage-c5" data-square="c5"></div>
+			<div class="cage whiteCage" id="cage-d5" data-square="d5"></div>
+			<div class="cage blackCage" id="cage-e5" data-square="e5"></div>
+			<div class="cage whiteCage" id="cage-f5" data-square="f5"></div>
+			<div class="cage blackCage" id="cage-g5" data-square="g5"></div>
+			<div class="cage whiteCage" id="cage-h5" data-square="h5"></div>
 			<div></div>
 			
 			<!--Ряд 4-->
 			<div class="cage border-left"><div class="cageContent contentNumber">4</div></div>
-			<div class="cage whiteCage" id="cage-A4"></div>
-			<div class="cage blackCage" id="cage-B4"></div>
-			<div class="cage whiteCage" id="cage-C4"></div>
-			<div class="cage blackCage" id="cage-D4"></div>
-			<div class="cage whiteCage" id="cage-E4"></div>
-			<div class="cage blackCage" id="cage-F4"></div>
-			<div class="cage whiteCage" id="cage-G4"></div>
-			<div class="cage blackCage" id="cage-H4"></div>
+			<div class="cage whiteCage" id="cage-a4" data-square="a4"></div>
+			<div class="cage blackCage" id="cage-b4" data-square="b4"></div>
+			<div class="cage whiteCage" id="cage-c4" data-square="c4"></div>
+			<div class="cage blackCage" id="cage-d4" data-square="d4"></div>
+			<div class="cage whiteCage" id="cage-e4" data-square="e4"></div>
+			<div class="cage blackCage" id="cage-f4" data-square="f4"></div>
+			<div class="cage whiteCage" id="cage-g4" data-square="g4"></div>
+			<div class="cage blackCage" id="cage-h4" data-square="h4"></div>
 			<div></div>
 			
 			<!--Ряд 3-->
 			<div class="cage border-left"><div class="cageContent contentNumber">3</div></div>
-			<div class="cage blackCage" id="cage-A3"></div>
-			<div class="cage whiteCage" id="cage-B3"></div>
-			<div class="cage blackCage" id="cage-C3"></div>
-			<div class="cage whiteCage" id="cage-D3"></div>
-			<div class="cage blackCage" id="cage-E3"></div>
-			<div class="cage whiteCage" id="cage-F3"></div>
-			<div class="cage blackCage" id="cage-G3"></div>
-			<div class="cage whiteCage" id="cage-H3"></div>
+			<div class="cage blackCage" id="cage-a3" data-square="a3"></div>
+			<div class="cage whiteCage" id="cage-b3" data-square="b3"></div>
+			<div class="cage blackCage" id="cage-c3" data-square="c3"></div>
+			<div class="cage whiteCage" id="cage-d3" data-square="d3"></div>
+			<div class="cage blackCage" id="cage-e3" data-square="e3"></div>
+			<div class="cage whiteCage" id="cage-f3" data-square="f3"></div>
+			<div class="cage blackCage" id="cage-g3" data-square="g3"></div>
+			<div class="cage whiteCage" id="cage-h3" data-square="h3"></div>
 			<div></div>
 			
 			<!--Ряд 2-->
 			<div class="cage border-left"><div class="cageContent contentNumber">2</div></div>
-			<div class="cage whiteCage" id="cage-A2"><div class="cageContent contentFigure figurePawn1White" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"></div></div>
-			<div class="cage blackCage" id="cage-B2"><div class="cageContent contentFigure figurePawn2White" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-C2"><div class="cageContent contentFigure figurePawn3White" draggable="true"></div></div>
-			<div class="cage blackCage" id="cage-D2"><div class="cageContent contentFigure figurePawn4White" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-E2"><div class="cageContent contentFigure figurePawn5White" draggable="true"></div></div>
-			<div class="cage blackCage" id="cage-F2"><div class="cageContent contentFigure figurePawn6White" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-G2"><div class="cageContent contentFigure figurePawn7White" draggable="true"></div></div>
-			<div class="cage blackCage" id="cage-H2"><div class="cageContent contentFigure figurePawn8White" draggable="true"></div></div>
+			<div class="cage whiteCage" id="cage-a2" data-square="a2"><div class="cageContent contentFigure" data-piece="wP" draggable="true" id="figurePawn1White" ondragstart="event.dataTransfer.setData('text/plain',null)"></div></div>
+			<div class="cage blackCage" id="cage-b2" data-square="b2"><div class="cageContent contentFigure" data-piece="wP" draggable="true" id="figurePawn2White"></div></div>
+			<div class="cage whiteCage" id="cage-c2" data-square="c2"><div class="cageContent contentFigure" data-piece="wP" draggable="true" id="figurePawn3White"></div></div>
+			<div class="cage blackCage" id="cage-d2" data-square="d2"><div class="cageContent contentFigure" data-piece="wP" draggable="true" id="figurePawn4White"></div></div>
+			<div class="cage whiteCage" id="cage-e2" data-square="e2"><div class="cageContent contentFigure" data-piece="wP" draggable="true" id="figurePawn5White"></div></div>
+			<div class="cage blackCage" id="cage-f2" data-square="f2"><div class="cageContent contentFigure" data-piece="wP" draggable="true" id="figurePawn6White"></div></div>
+			<div class="cage whiteCage" id="cage-g2" data-square="g2"><div class="cageContent contentFigure" data-piece="wP" draggable="true" id="figurePawn7White"></div></div>
+			<div class="cage blackCage" id="cage-h2" data-square="h2"><div class="cageContent contentFigure" data-piece="wP" draggable="true" id="figurePawn8White"></div></div>
 			<div></div>
 			
 			<!--Ряд 1-->
 			<div class="cage border-left"><div class="cageContent contentNumber">1</div></div>
-			<div class="cage blackCage" id="cage-A1"><div class="cageContent contentFigure figureRook1White" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-B1"><div class="cageContent contentFigure figureKnight1White" draggable="true"></div></div>
-			<div class="cage blackCage" id="cage-C1"><div class="cageContent contentFigure figureBishop1White" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-D1"><div class="cageContent contentFigure figureQueenWhite" draggable="true"></div></div>
-			<div class="cage blackCage" id="cage-E1"><div class="cageContent contentFigure figureKingWhite" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-F1"><div class="cageContent contentFigure figureBishop2White" draggable="true"></div></div>
-			<div class="cage blackCage" id="cage-G1"><div class="cageContent contentFigure figureKnight2White" draggable="true"></div></div>
-			<div class="cage whiteCage" id="cage-H1"><div class="cageContent contentFigure figureRook2White" draggable="true"></div></div>
+			<div class="cage blackCage" id="cage-a1" data-square="a1"><div class="cageContent contentFigure" data-piece="wR" draggable="true" id="figureRook1White"></div></div>
+			<div class="cage whiteCage" id="cage-b1" data-square="b1"><div class="cageContent contentFigure" data-piece="wN" draggable="true" id="figureKnight1White"></div></div>
+			<div class="cage blackCage" id="cage-c1" data-square="c1"><div class="cageContent contentFigure" data-piece="wB" draggable="true" id="figureBishop1White"></div></div>
+			<div class="cage whiteCage" id="cage-d1" data-square="d1"><div class="cageContent contentFigure" data-piece="wQ" draggable="true" id="figureQueenWhite"></div></div>
+			<div class="cage blackCage" id="cage-e1" data-square="e1"><div class="cageContent contentFigure" data-piece="wK" draggable="true" id="figureKingWhite"></div></div>
+			<div class="cage whiteCage" id="cage-f1" data-square="f1"><div class="cageContent contentFigure" data-piece="wB" draggable="true" id="figureBishop2White"></div></div>
+			<div class="cage blackCage" id="cage-g1" data-square="g1"><div class="cageContent contentFigure" data-piece="wN" draggable="true" id="figureKnight2White"></div></div>
+			<div class="cage whiteCage" id="cage-h1" data-square="h1"><div class="cageContent contentFigure" data-piece="wR" draggable="true" id="figureRook2White"></div></div>
 			<div></div>
 			
 			<!--Нижняя граница-->
@@ -131,5 +130,7 @@
 		</div>
 		<div id="FEN" style="display:none">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1</div>
 	</div>
+	<script src="js/chess.js"></script>
+	<script src="js/script.js"></script>
   </body>
 </html>
