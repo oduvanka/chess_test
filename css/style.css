@@ -28,6 +28,7 @@ body {
 }
 
 .cage {
+	position: relative;
 	color: #ffffff;
 	text-align: center;
 }
@@ -45,8 +46,12 @@ body {
 	background-color: #7d8fbd;
 }
 
-.cageLegal {
-	background-color="purple";
+.whiteCageLegal {
+	background-color: #a9a9a9;
+}
+
+.blackCageLegal {
+	background-color: #696969;
 }
 
 /*Фигуры*/
