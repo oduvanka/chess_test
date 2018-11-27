@@ -27,14 +27,12 @@ body {
 	box-sizing: border-box;
 }
 
+/*Клетки*/
+
 .cage {
 	position: relative;
 	color: #ffffff;
 	text-align: center;
-}
-
-.contentNumber {
-	line-height: 62px;
 }
 
 .whiteCage {
@@ -54,6 +52,10 @@ body {
 	background-color: #696969;
 }
 
+.contentNumber {
+	line-height: 62px;
+}
+
 /*Фигуры*/
 
 .contentFigure {
@@ -70,7 +72,6 @@ body {
 }
 
 .contentFigure:hover {
-	
 }
 
 /*Белые*/
@@ -143,4 +144,30 @@ body {
 #figurePawn7Black,
 #figurePawn8Black {
 	background-position: -300px -65px;
+}
+
+/*Информационная панель*/
+.info {
+	display: flex;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 380px;
+	flex-direction: column;
+	justify-content: space-around;
+	
+	/*visibility: hidden;*/
+}
+
+.captives {
+	display: flex;
+	min-height: 250px;
+	margin: 20px 10px;
+	flex-wrap: wrap;
+	background-color: #f8f8f8;
+}
+
+.captiveFigure {
+	margin: 10px;
+	opacity: 0.5;
 }

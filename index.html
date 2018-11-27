@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <title>Шахматы</title>
 	<link rel="stylesheet" href="css/style.css">
+	<script src="js/scriptCookie.js"></script>
   </head>
-  <body>
+  <body onload="checkCookie()">
 	<div class="container">
 		<div class="board">
 			<!--Верхняя граница-->
@@ -40,7 +41,7 @@
 			<div class="cage whiteCage" id="cage-d7" data-square="d7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn4Black"></div></div>
 			<div class="cage blackCage" id="cage-e7" data-square="e7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn5Black"></div></div>
 			<div class="cage whiteCage" id="cage-f7" data-square="f7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn6Black"></div></div>
-			<div class="cage blackCage" id="cage-g7" data-square="h7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn7Black"></div></div>
+			<div class="cage blackCage" id="cage-g7" data-square="g7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn7Black"></div></div>
 			<div class="cage whiteCage" id="cage-h7" data-square="h7"><div class="cageContent contentFigure" data-piece="bP" draggable="true" id="figurePawn8Black"></div></div>
 			<div></div>
 			
@@ -128,8 +129,12 @@
 			<div class="cage"><div class="cageContent contentLetter">H</div></div>
 			<div></div>
 		</div>
-		<div id="FEN" style="display:none">rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1</div>
 	</div>
+	<div class="info">
+		<div class="captives" id="captivesW"></div>
+		<div class="captives" id="captivesB"></div>
+	</div>
+	
 	<script src="js/chess.js"></script>
 	<script src="js/script.js"></script>
   </body>

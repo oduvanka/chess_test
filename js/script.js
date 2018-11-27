@@ -1,6 +1,14 @@
-var figures = document.querySelectorAll('.contentFigure');
-var dragged;
-var game = new Chess();
+var
+	game = new Chess(),
+	
+	figures = document.querySelectorAll('.contentFigure'),
+	dragged,
+	
+	captivesW = document.querySelector('#captivesW'),
+	captivesB = document.querySelector('#captivesB'),
+	
+	statusEl,
+	fenEl;
 
 
 var removeGreySquares = function() {
@@ -63,7 +71,7 @@ var addCageMouseOut = function (figure) {
 
 var addFigureDragStart = function (figure) {
 	figure.addEventListener("dragstart", function() {	
-		var piece = figure.dataset.piece;
+		var piece = event.target.dataset.piece;
 		
 		// do not pick up pieces if the game is over
 		// or if it's not that side's turn
@@ -79,9 +87,6 @@ var addFigureDragStart = function (figure) {
 	});
 };
 
-/* events fired on the draggable target */
-document.addEventListener("drag", function(evt) {
-}, false);
 
 document.addEventListener("dragend", function(evt) {
 	// reset the transparency
@@ -94,53 +99,75 @@ document.addEventListener("dragover", function(evt) {
 	evt.preventDefault();
 }, false);
 
-document.addEventListener("dragenter", function(evt) {
-	// highlight potential drop target when the draggable element enters it
-	if (~evt.target.id.indexOf("cage-")) {
-		//evt.target.style.background = "purple";
-	}
-}, false);
-
-document.addEventListener("dragleave", function(evt) {
-	// reset background of potential drop target when the draggable element leaves it
-	if ( ~evt.target.id.indexOf("cage-") ) {
-		//evt.target.style.background = "";
-	}
-}, false);
 
 document.addEventListener("drop", function(evt) {
 	// prevent default action (open as link for some elements)
 	evt.preventDefault();
 	
-	evt.target.style.opacity = "";
+	//evt.target.style.opacity = "";
 	removeGreySquares();
-		
+	
+	var toCage = evt.target;
+	if ( ~evt.target.className.indexOf("contentFigure")) {
+		toCage = evt.target.parentNode;
+	}	
 	// see if the move is legal
 	var move = game.move({
 		from: dragged.parentNode.dataset.square,
-		to: evt.target.dataset.square,
+		to: toCage.dataset.square,
 		promotion: 'q' // NOTE: always promote to a queen for example simplicity
 	});
 
 	// illegal move
 	if (move === null) {
-		//return 'snapback';
 	}
 	else {
-		// move dragged elem to the selected drop target
-		if ( ~evt.target.id.indexOf("cage-") ) {
-			evt.target.style.background = "";
-			dragged.parentNode.removeChild(dragged);
-			evt.target.appendChild(dragged);
+		// move dragged elem to the selected drop target	
+		if ( ~evt.target.className.indexOf("contentFigure")) {
+			//если в клетке, в которую будем перетаскивать, есть фигура, уберём её пленником в соответствующий сброс
+			toCage.removeChild(evt.target);
+			if (move.color === 'w') {
+				captivesB.appendChild(evt.target);
+			}
+			else {
+				captivesW.appendChild(evt.target);
+			}
+			evt.target.classList.add('captiveFigure');
 		}
+		dragged.parentNode.removeChild(dragged);
+		toCage.appendChild(dragged);
+		updateStatus();
 	}
 }, false);
 
-
-/*
-var onSnapEnd = function() {
-	//board.position(game.fen());
-};*/
+var updateStatus = function() { //Обновление статуса
+	var status = '';
+	var moveColor = 'белые';
+	if (game.turn() === game.BLACK) {
+		moveColor = 'чёрные';
+	}
+	if (game.in_checkmate() === true) { //Мат
+		status = 'Вне игры, ' + moveColor + ' получили мат';
+		/*-----------------------------------------------------------------------*/
+		/*добавить удаление cookie - записать задним числом*/
+		/*-----------------------------------------------------------------------*/
+	}
+	else if (game.in_draw() === true) { //Ничья
+		status = 'Вне игры, ничья';
+		/*-----------------------------------------------------------------------*/
+		/*добавить удаление cookie - записать задним числом*/
+		/*-----------------------------------------------------------------------*/
+	}
+	else {
+		status = moveColor + ' могут ходить';
+		if (game.in_check() === true) { //Шах
+			status += ', ' + moveColor + ' под шахом';
+		}
+	}
+	statusEl = status;
+	fenEl = game.fen();
+	setCookie(fenEl);
+};
 
 
 for (var i = 0; i < figures.length; i++) {
