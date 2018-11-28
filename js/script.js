@@ -5,10 +5,7 @@ var
 	dragged,
 	
 	captivesW = document.querySelector('#captivesW'),
-	captivesB = document.querySelector('#captivesB'),
-	
-	statusEl,
-	fenEl;
+	captivesB = document.querySelector('#captivesB');
 
 
 var removeGreySquares = function() {
@@ -126,7 +123,8 @@ document.addEventListener("drop", function(evt) {
 		if ( ~evt.target.className.indexOf("contentFigure")) {
 			//если в клетке, в которую будем перетаскивать, есть фигура, уберём её пленником в соответствующий сброс
 			toCage.removeChild(evt.target);
-			if (move.color === 'w') {
+			//к этому моменту в game.move ход уже сделан и передан следующему игроку, но мы ещё перетаскиваем фигуры
+			if (game.turn() === game.BLACK) {
 				captivesB.appendChild(evt.target);
 			}
 			else {
@@ -136,6 +134,50 @@ document.addEventListener("drop", function(evt) {
 		}
 		dragged.parentNode.removeChild(dragged);
 		toCage.appendChild(dragged);
+		
+		if (move.san.indexOf('=Q') !== -1) {
+		//если пешка дошла до края, заменим её на ферзя
+			if (game.turn() === game.BLACK) {
+				dragged.classList.remove('figurePawnWhite');
+				dragged.classList.add('figureQueenWhite');
+			}
+			else {
+				dragged.classList.remove('figurePawnBlack');
+				dragged.classList.add('figureQueenBlack');
+			}
+		}
+		
+		if (move.san.indexOf('O-O-O') !== -1) {
+		//если длинная рокировка
+			if (game.turn() === game.BLACK) {
+				var tempFigure = document.querySelector('#figureRook1White');
+				var tempCage = document.querySelector('#cage-d1');
+				tempFigure.parentNode.removeChild(tempFigure);
+				tempCage.appendChild(tempFigure);
+			}
+			else {
+				var tempFigure = document.querySelector('#figureRook1Black');
+				var tempCage = document.querySelector('#cage-d8');
+				tempFigure.parentNode.removeChild(tempFigure);
+				tempCage.appendChild(tempFigure);
+			}
+		}
+		else if (move.san.indexOf('O-O') !== -1) {
+			//если короткая рокировка
+			if (game.turn() === game.BLACK) {
+				var tempFigure = document.querySelector('#figureRook2White');
+				var tempCage = document.querySelector('#cage-f1');
+				tempFigure.parentNode.removeChild(tempFigure);
+				tempCage.appendChild(tempFigure);
+			}
+			else {
+				var tempFigure = document.querySelector('#figureRook2Black');
+				var tempCage = document.querySelector('#cage-f8');
+				tempFigure.parentNode.removeChild(tempFigure);
+				tempCage.appendChild(tempFigure);
+			}
+		}
+		
 		updateStatus();
 	}
 }, false);
@@ -143,6 +185,7 @@ document.addEventListener("drop", function(evt) {
 var updateStatus = function() { //Обновление статуса
 	var status = '';
 	var moveColor = 'белые';
+	setCookie(game.fen());
 	if (game.turn() === game.BLACK) {
 		moveColor = 'чёрные';
 	}
@@ -151,12 +194,14 @@ var updateStatus = function() { //Обновление статуса
 		/*-----------------------------------------------------------------------*/
 		/*добавить удаление cookie - записать задним числом*/
 		/*-----------------------------------------------------------------------*/
+		alert(status);
 	}
 	else if (game.in_draw() === true) { //Ничья
 		status = 'Вне игры, ничья';
 		/*-----------------------------------------------------------------------*/
 		/*добавить удаление cookie - записать задним числом*/
 		/*-----------------------------------------------------------------------*/
+		alert(status);
 	}
 	else {
 		status = moveColor + ' могут ходить';
@@ -164,9 +209,6 @@ var updateStatus = function() { //Обновление статуса
 			status += ', ' + moveColor + ' под шахом';
 		}
 	}
-	statusEl = status;
-	fenEl = game.fen();
-	setCookie(fenEl);
 };
 
 

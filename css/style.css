@@ -59,9 +59,8 @@ body {
 /*Фигуры*/
 
 .contentFigure {
-	width: 52px;
-	height: 52px;
-	margin: 4px;
+	width: 62px;
+	height: 62px;
 	
 	filter: drop-shadow(1px 1px 1px #666666);
 	background-image: url("../img/image2.png");
@@ -76,74 +75,54 @@ body {
 
 /*Белые*/
 /*Король*/
-#figureKingWhite {
-	background-position: -3px -3px;
+.figureKingWhite {
+	background-position: 0px 0px;
 }
 /*Ферзь*/
-#figureQueenWhite {
-	background-position: -63px -3px;
+.figureQueenWhite {
+	background-position: -59px 0px;
 }
 /*Слон*/
-#figureBishop1White,
-#figureBishop2White {
-	background-position: -122px -3px;
+.figureBishopWhite {
+	background-position: -118px 0px;
 }
 /*Конь*/
-#figureKnight1White,
-#figureKnight2White {
-	background-position: -181px -3px;
+.figureKnightWhite {
+	background-position: -177px 0px;
 }
 /*Ладья*/
-#figureRook1White,
-#figureRook2White {
-	background-position: -240px -3px;
+.figureRookWhite {
+	background-position: -236px 0px;
 }
 /*Пешка*/
-#figurePawn1White,
-#figurePawn2White,
-#figurePawn3White,
-#figurePawn4White,
-#figurePawn5White,
-#figurePawn6White,
-#figurePawn7White,
-#figurePawn8White {
-	background-position: -300px -3px;
+.figurePawnWhite {
+	background-position: -295px 0px;
 }
 
 /*Чёрные*/
 /*Король*/
-#figureKingBlack {
-	background-position: -3px -65px;
+.figureKingBlack {
+	background-position: 0px -59px;
 }
 /*Ферзь*/
-#figureQueenBlack {
-	background-position: -63px -65px;
+.figureQueenBlack {
+	background-position: -59px -59px;
 }
 /*Слон*/
-#figureBishop1Black,
-#figureBishop2Black {
-	background-position: -122px -65px;
+.figureBishopBlack {
+	background-position: -118px -59px;
 }
 /*Конь*/
-#figureKnight1Black,
-#figureKnight2Black {
-	background-position: -181px -65px;
+.figureKnightBlack {
+	background-position: -177px -59px;
 }
 /*Ладья*/
-#figureRook1Black,
-#figureRook2Black {
-	background-position: -240px -65px;
+.figureRookBlack {
+	background-position: -236px -59px;
 }
 /*Пешка*/
-#figurePawn1Black,
-#figurePawn2Black,
-#figurePawn3Black,
-#figurePawn4Black,
-#figurePawn5Black,
-#figurePawn6Black,
-#figurePawn7Black,
-#figurePawn8Black {
-	background-position: -300px -65px;
+.figurePawnBlack {
+	background-position: -295px -59px;
 }
 
 /*Информационная панель*/
@@ -151,7 +130,7 @@ body {
 	display: flex;
 	position: absolute;
 	top: 0;
-	right: 0;
+	left: 0;
 	width: 380px;
 	flex-direction: column;
 	justify-content: space-around;
