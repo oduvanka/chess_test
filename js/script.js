@@ -4,6 +4,13 @@ var
 	figures = document.querySelectorAll('.contentFigure'),
 	dragged,
 	
+	statusW = document.querySelector('.statusW'),
+	statusB = document.querySelector('.statusB'),
+	init=0,
+	timelineW = document.querySelector('.timelineW'),
+	timelineB = document.querySelector('.timelineB'),
+	timeW = 1000,
+	timeB = 1000,
 	captivesW = document.querySelector('#captivesW'),
 	captivesB = document.querySelector('#captivesB');
 
@@ -185,10 +192,17 @@ document.addEventListener("drop", function(evt) {
 var updateStatus = function() { //Обновление статуса
 	var status = '';
 	var moveColor = 'белые';
+	
+	statusW.style.visibility = "visible";
+	statusB.style.visibility = "hidden";
+	
 	setCookie(game.fen());
 	if (game.turn() === game.BLACK) {
 		moveColor = 'чёрные';
+		statusW.style.visibility = "hidden";
+		statusB.style.visibility = "visible";
 	}
+	
 	if (game.in_checkmate() === true) { //Мат
 		status = 'Вне игры, ' + moveColor + ' получили мат';
 		/*-----------------------------------------------------------------------*/
@@ -212,8 +226,55 @@ var updateStatus = function() { //Обновление статуса
 };
 
 
+
+function startTIME(t) { 
+	t = t + 1000;
+	var ms = t%1000;
+	
+	t-=ms;
+	ms=Math.floor(ms/10);
+	t = Math.floor (t/1000);
+	var s = t%60;
+	
+	t-=s;
+	t = Math.floor (t/60);
+	var m = t%60;
+	
+	t-=m;
+	t = Math.floor (t/60);
+	var h = t%60;
+	
+	//добавляем незначащий ноль
+	if (h<10) h='0'+h;
+	if (m<10) m='0'+m;
+	if (s<10) s='0'+s;
+	if (ms<10) ms='0'+ms;
+	
+	if (init==1) {
+		timelineW.textContent = h + ':' + m + ':' + s;
+	}
+	setTimeout("startTIME()",1000);
+}
+
+function findTIME() {
+	if (init==0) {
+		startTIME();
+		init=1;
+	} 
+	else {
+	/*var str = trim(document.clockform.label.value);
+	document.getElementById('marker').innerHTML = (str==''?'':str+': ') + 
+	document.clockform.clock.value + '<br>' + document.getElementById('marker').innerHTML;*/
+  }
+ }
+
+
+ 
 for (var i = 0; i < figures.length; i++) {
 	addCageMouseOver(figures[i]);
 	addCageMouseOut(figures[i]);
 	addFigureDragStart(figures[i]);
 }
+
+statusB.style.visibility = "hidden";
+findTIME(timeW);

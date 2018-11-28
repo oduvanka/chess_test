@@ -8,6 +8,25 @@
   </head>
   <body onload="checkCookie()">
 	<div class="container">
+		<div class="info">
+			<div class="infoBlock">
+				<div class="player">
+					<div class="playerName">Тёмный игрок</div>
+					<div class="status statusB">...ходит...</div>
+					<div class="timeline timelineB">00:00:00</div>
+				</div>
+				<div class="captives" id="captivesW"></div>
+			</div>
+			<div class="infoBlock">
+				<div class="player">
+					<div class="playerName">Светлый игрок</div>
+					<div class="status statusW">...ходит...</div>
+					<div class="timeline timelineW">00:00:00</div>
+				</div>
+				<div class="captives" id="captivesB"></div>
+			</div>
+		</div>
+		
 		<div class="board">
 			<!--Верхняя граница-->
 			<div></div>
@@ -129,10 +148,6 @@
 			<div class="cage"><div class="cageContent contentLetter">H</div></div>
 			<div></div>
 		</div>
-	</div>
-	<div class="info">
-		<div class="captives" id="captivesW"></div>
-		<div class="captives" id="captivesB"></div>
 	</div>
 	
 	<script src="js/chess.js"></script>

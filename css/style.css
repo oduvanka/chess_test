@@ -10,14 +10,56 @@ body {
 }
 
 .container {
+	display: flex;
 	margin: 0 auto;
+	justify-content: flex-start;
 }
+
+/*Информационная панель*/
+.info {
+	width: 400px;
+	margin: 20px 20px;
+}
+
+.infoBlock {
+	
+}
+
+.player {
+	display: flex;
+	flex-direction: row;
+    justify-content: space-between;
+	align-items: center;
+}
+
+.playerName,
+.status {
+	color: #999999;
+}
+
+.timeline {
+	color: #CCCCCC;
+}
+
+.captives {
+	display: flex;
+	min-height: 250px;
+	flex-wrap: wrap;
+	background-color: #f8f8f8;
+}
+
+.captiveFigure {
+	margin: 10px;
+	opacity: 0.5;
+}
+
+/*Доска*/
 
 .board {
 	display: grid;
 	width: 536px;
 	height: 536px;
-	margin: 20px auto;
+	margin-top: 20px;
 	
 	grid-template-columns:	17px 62px 62px 62px 62px 62px 62px 62px 62px 17px;
 	grid-template-rows:		17px 62px 62px 62px 62px 62px 62px 62px 62px 17px;
@@ -123,30 +165,4 @@ body {
 /*Пешка*/
 .figurePawnBlack {
 	background-position: -295px -59px;
-}
-
-/*Информационная панель*/
-.info {
-	display: flex;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 380px;
-	flex-direction: column;
-	justify-content: space-around;
-	
-	/*visibility: hidden;*/
-}
-
-.captives {
-	display: flex;
-	min-height: 250px;
-	margin: 20px 10px;
-	flex-wrap: wrap;
-	background-color: #f8f8f8;
-}
-
-.captiveFigure {
-	margin: 10px;
-	opacity: 0.5;
 }
