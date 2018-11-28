@@ -275,12 +275,7 @@ function findTIME() {
 	if (init==0) {
 		startTIME();
 		init=1;
-	} 
-	else {
-	/*var str = trim(document.clockform.label.value);
-	document.getElementById('marker').innerHTML = (str==''?'':str+': ') + 
-	document.clockform.clock.value + '<br>' + document.getElementById('marker').innerHTML;*/
-  }
+	}
  }
 
 
