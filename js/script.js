@@ -227,8 +227,18 @@ var updateStatus = function() { //Обновление статуса
 
 
 
-function startTIME(t) { 
-	t = t + 1000;
+function startTIME() { 
+	var t = 0;
+	if (game.turn() === game.BLACK) {
+	//если счётчик работает во время хода тёмных
+		timeB += 1000;
+		t = timeB;
+	}
+	else {
+		timeW += 1000;
+		t = timeW;
+	}
+	
 	var ms = t%1000;
 	
 	t-=ms;
@@ -251,7 +261,12 @@ function startTIME(t) {
 	if (ms<10) ms='0'+ms;
 	
 	if (init==1) {
-		timelineW.textContent = h + ':' + m + ':' + s;
+		if (game.turn() === game.BLACK) {
+			timelineB.textContent = h + ':' + m + ':' + s;
+		}
+		else {
+			timelineW.textContent = h + ':' + m + ':' + s;
+		}
 	}
 	setTimeout("startTIME()",1000);
 }
