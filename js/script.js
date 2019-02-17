@@ -18,34 +18,34 @@ var
 var removeGreySquares = function() {
 	//удалим подсветку с клеток
 	
-	var squaresLegalW = document.querySelectorAll('.whiteCageLegal');
-	var squaresLegalB = document.querySelectorAll('.blackCageLegal');
+	var squaresLegalW = document.querySelectorAll('.whiteCellLegal');
+	var squaresLegalB = document.querySelectorAll('.blackCellLegal');
 	
 	for (var i=0; i<=squaresLegalW.length-1; i++) {
-		squaresLegalW[i].classList.remove('whiteCageLegal');
+		squaresLegalW[i].classList.remove('whiteCellLegal');
 	}
 	for (var j=0; j<=squaresLegalB.length-1; j++) {
-		squaresLegalB[j].classList.remove('blackCageLegal');
+		squaresLegalB[j].classList.remove('blackCellLegal');
 	}
 };
 
 var greySquare = function(square) {
 	//подсветим клетку, на которую можно походить
-	var squareLegal = document.getElementById('cage-' + square);
-	var background = 'whiteCageLegal';
-	if (squareLegal.classList.contains('blackCage')) {
-		background = 'blackCageLegal';
+	var squareLegal = document.getElementById('cell-' + square);
+	var background = 'whiteCellLegal';
+	if (squareLegal.classList.contains('blackCell')) {
+		background = 'blackCellLegal';
 	}
 	squareLegal.classList.add(background);
 };
 
-var addCageMouseOver = function (figure) {
+var addCellMouseOver = function (figure) {
 	//при наведении на фигуру проверим вызовем подсветку доступных дл€ перемещени€ клеткок
 	figure.addEventListener("mouseover", function() {
 	
 		var square = event.target.parentNode.dataset.square;
 		
-		// get list of possible moves for this cage
+		// get list of possible moves for this cell
 		var moves = game.moves({
 			square: square,
 			verbose: true
@@ -64,7 +64,7 @@ var addCageMouseOver = function (figure) {
   });
 };
 
-var addCageMouseOut = function (figure) {
+var addCellMouseOut = function (figure) {
 	//при сходе курсора с клетки, на которой фигура, вызовем удаление подсветки клеток
 	figure.addEventListener("mouseout", function() {
 		removeGreySquares();
@@ -111,14 +111,14 @@ document.addEventListener("drop", function(evt) {
 	//evt.target.style.opacity = "";
 	removeGreySquares();
 	
-	var toCage = evt.target;
+	var toCell = evt.target;
 	if ( ~evt.target.className.indexOf("contentFigure")) {
-		toCage = evt.target.parentNode;
+		toCell = evt.target.parentNode;
 	}	
 	// see if the move is legal
 	var move = game.move({
 		from: dragged.parentNode.dataset.square,
-		to: toCage.dataset.square,
+		to: toCell.dataset.square,
 		promotion: 'q' // NOTE: always promote to a queen for example simplicity
 	});
 
@@ -129,7 +129,7 @@ document.addEventListener("drop", function(evt) {
 		// move dragged elem to the selected drop target	
 		if ( ~evt.target.className.indexOf("contentFigure")) {
 			//если в клетке, в которую будем перетаскивать, есть фигура, уберЄм еЄ пленником в соответствующий сброс
-			toCage.removeChild(evt.target);
+			toCell.removeChild(evt.target);
 			//к этому моменту в game.move ход уже сделан и передан следующему игроку, но мы ещЄ перетаскиваем фигуры
 			if (game.turn() === game.BLACK) {
 				captivesB.appendChild(evt.target);
@@ -140,7 +140,7 @@ document.addEventListener("drop", function(evt) {
 			evt.target.classList.add('captiveFigure');
 		}
 		dragged.parentNode.removeChild(dragged);
-		toCage.appendChild(dragged);
+		toCell.appendChild(dragged);
 		
 		if (move.san.indexOf('=Q') !== -1) {
 		//если пешка дошла до кра€, заменим еЄ на ферз€
@@ -158,30 +158,30 @@ document.addEventListener("drop", function(evt) {
 		//если длинна€ рокировка
 			if (game.turn() === game.BLACK) {
 				var tempFigure = document.querySelector('#figureRook1White');
-				var tempCage = document.querySelector('#cage-d1');
+				var tempCell = document.querySelector('#cell-d1');
 				tempFigure.parentNode.removeChild(tempFigure);
-				tempCage.appendChild(tempFigure);
+				tempCell.appendChild(tempFigure);
 			}
 			else {
 				var tempFigure = document.querySelector('#figureRook1Black');
-				var tempCage = document.querySelector('#cage-d8');
+				var tempCell = document.querySelector('#cell-d8');
 				tempFigure.parentNode.removeChild(tempFigure);
-				tempCage.appendChild(tempFigure);
+				tempCell.appendChild(tempFigure);
 			}
 		}
 		else if (move.san.indexOf('O-O') !== -1) {
 			//если коротка€ рокировка
 			if (game.turn() === game.BLACK) {
 				var tempFigure = document.querySelector('#figureRook2White');
-				var tempCage = document.querySelector('#cage-f1');
+				var tempCell = document.querySelector('#cell-f1');
 				tempFigure.parentNode.removeChild(tempFigure);
-				tempCage.appendChild(tempFigure);
+				tempCell.appendChild(tempFigure);
 			}
 			else {
 				var tempFigure = document.querySelector('#figureRook2Black');
-				var tempCage = document.querySelector('#cage-f8');
+				var tempCell = document.querySelector('#cell-f8');
 				tempFigure.parentNode.removeChild(tempFigure);
-				tempCage.appendChild(tempFigure);
+				tempCell.appendChild(tempFigure);
 			}
 		}
 		
@@ -190,13 +190,16 @@ document.addEventListener("drop", function(evt) {
 }, false);
 
 var updateStatus = function() { //ќбновление статуса
-	var status = '';
-	var moveColor = 'белые';
+	var status = '',
+		moveColor = 'белые';
 	
 	statusW.style.visibility = "visible";
 	statusB.style.visibility = "hidden";
 	
-	setCookie(game.fen());
+	/*---------------------------------------------*/
+	/*записать game.fen() в localstorage*/
+	/*---------------------------------------------*/
+	
 	if (game.turn() === game.BLACK) {
 		moveColor = 'чЄрные';
 		statusW.style.visibility = "hidden";
@@ -205,16 +208,16 @@ var updateStatus = function() { //ќбновление статуса
 	
 	if (game.in_checkmate() === true) { //ћат
 		status = '¬не игры, ' + moveColor + ' получили мат';
-		/*-----------------------------------------------------------------------*/
-		/*добавить удаление cookie - записать задним числом*/
-		/*-----------------------------------------------------------------------*/
+		/*------------------------------------*/
+		/*удалить fen из localstorage*/
+		/*------------------------------------*/
 		alert(status);
 	}
 	else if (game.in_draw() === true) { //Ќичь€
 		status = '¬не игры, ничь€';
-		/*-----------------------------------------------------------------------*/
-		/*добавить удаление cookie - записать задним числом*/
-		/*-----------------------------------------------------------------------*/
+		/*------------------------------------*/
+		/*удалить fen из localstorage*/
+		/*------------------------------------*/
 		alert(status);
 	}
 	else {
@@ -281,8 +284,8 @@ function findTIME() {
 
  
 for (var i = 0; i < figures.length; i++) {
-	addCageMouseOver(figures[i]);
-	addCageMouseOut(figures[i]);
+	addCellMouseOver(figures[i]);
+	addCellMouseOut(figures[i]);
 	addFigureDragStart(figures[i]);
 }
 

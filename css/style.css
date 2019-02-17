@@ -67,26 +67,26 @@ body {
 
 /*Клетки*/
 
-.cage {
+.cell {
 	position: relative;
 	color: #ffffff;
 	text-align: center;
 }
 
-.whiteCage {
+.whiteCell {
 	background-color: #e5e5e5;
 	border: 1px outset #9da4ae;
 }
 
-.blackCage {
+.blackCell {
 	background-color: #7d8fbd;
 }
 
-.whiteCageLegal {
+.whiteCellLegal {
 	background-color: #a9a9a9;
 }
 
-.blackCageLegal {
+.blackCellLegal {
 	background-color: #696969;
 }
 
