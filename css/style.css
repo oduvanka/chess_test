@@ -15,7 +15,7 @@ body {
 	justify-content: flex-start;
 }
 
-/*Информационная панель*/
+/*РРЅС„РѕСЂРјР°С†РёРѕРЅРЅР°СЏ РїР°РЅРµР»СЊ*/
 .info {
 	width: 400px;
 	margin: 20px 20px;
@@ -49,7 +49,7 @@ body {
 	opacity: 0.5;
 }
 
-/*Доска*/
+/*Р”РѕСЃРєР°*/
 
 .board {
 	display: grid;
@@ -65,7 +65,7 @@ body {
 	box-sizing: border-box;
 }
 
-/*Клетки*/
+/*РљР»РµС‚РєРё*/
 
 .cell {
 	position: relative;
@@ -94,14 +94,14 @@ body {
 	line-height: 62px;
 }
 
-/*Фигуры*/
+/*Р¤РёРіСѓСЂС‹*/
 
 .contentFigure {
 	width: 62px;
 	height: 62px;
 	
 	filter: drop-shadow(1px 1px 1px #666666);
-	background-image: url("../img/image2.png");
+	background-image: url("img/image2.png");
 	background-repeat: no-repeat;
 	background-size: 355px auto;
 	
@@ -111,54 +111,54 @@ body {
 .contentFigure:hover {
 }
 
-/*Белые*/
-/*Король*/
+/*Р‘РµР»С‹Рµ*/
+/*РљРѕСЂРѕР»СЊ*/
 .figureKingWhite {
 	background-position: 0px 0px;
 }
-/*Ферзь*/
+/*Р¤РµСЂР·СЊ*/
 .figureQueenWhite {
 	background-position: -59px 0px;
 }
-/*Слон*/
+/*РЎР»РѕРЅ*/
 .figureBishopWhite {
 	background-position: -118px 0px;
 }
-/*Конь*/
+/*РљРѕРЅСЊ*/
 .figureKnightWhite {
 	background-position: -177px 0px;
 }
-/*Ладья*/
+/*Р›Р°РґСЊСЏ*/
 .figureRookWhite {
 	background-position: -236px 0px;
 }
-/*Пешка*/
+/*РџРµС€РєР°*/
 .figurePawnWhite {
 	background-position: -295px 0px;
 }
 
-/*Чёрные*/
-/*Король*/
+/*Р§С‘СЂРЅС‹Рµ*/
+/*РљРѕСЂРѕР»СЊ*/
 .figureKingBlack {
 	background-position: 0px -59px;
 }
-/*Ферзь*/
+/*Р¤РµСЂР·СЊ*/
 .figureQueenBlack {
 	background-position: -59px -59px;
 }
-/*Слон*/
+/*РЎР»РѕРЅ*/
 .figureBishopBlack {
 	background-position: -118px -59px;
 }
-/*Конь*/
+/*РљРѕРЅСЊ*/
 .figureKnightBlack {
 	background-position: -177px -59px;
 }
-/*Ладья*/
+/*Р›Р°РґСЊСЏ*/
 .figureRookBlack {
 	background-position: -236px -59px;
 }
-/*Пешка*/
+/*РџРµС€РєР°*/
 .figurePawnBlack {
 	background-position: -295px -59px;
 }
