@@ -101,7 +101,7 @@ body {
 	height: 62px;
 	
 	filter: drop-shadow(1px 1px 1px #666666);
-	background-image: url("img/image-2.png");
+	background-image: url("../img/image-2.png");
 	background-repeat: no-repeat;
 	background-size: 355px auto;
 	
